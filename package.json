@@ -1,0 +1,18 @@
+{
+	"name": "frontent-js-functions",
+	"description": "JavaScript functions task",
+	"author": "Fabrika",
+	"version": "1.0.0",
+	"main": "src/index.js",
+	"dependencies": {
+		
+	},
+	"devDependencies": {
+		"grunt": "latest",
+		"grunt-contrib-watch": "latest",
+		"grunt-contrib-jasmine": "latest"
+	},
+	"scripts": {
+		"test": "grunt test"
+	}
+}
