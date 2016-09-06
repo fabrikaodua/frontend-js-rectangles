@@ -45,18 +45,22 @@ describe('The function', function () {
 		rect10 = Object.freeze({
 			left: -10, top: 0,
 			width: 10, height: 10
-		});
+		}),
+		rect11 = Object.freeze({
+            left: 10, top: 10,
+            width: 0,  height: 25
+        });
 	
-	//defineIntersection
-	describe('`defineIntersection`', function () {
+	//areIntersected
+	describe('`areIntersected`', function () {
 		var intersected;
 		
         it('is defined', function () {
-            expect(defineIntersection).toBeDefined();
+            expect(areIntersected).toBeDefined();
         });
 		
 		it('is a function', function () {
-            expect(defineIntersection).toEqual(jasmine.any(Function));
+            expect(areIntersected).toEqual(jasmine.any(Function));
         });
 		
 		beforeEach(function(){
@@ -66,71 +70,76 @@ describe('The function', function () {
 		describe('can define', function () {
 			describe('intersection', function(){
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect2), function () {
-					intersected = defineIntersection(rect1, rect2);
+					intersected = areIntersected(rect1, rect2);
 					expect(intersected).toBe(true);
 				});
 				
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect3), function () {
-					intersected = defineIntersection(rect1, rect3);
+					intersected = areIntersected(rect1, rect3);
 					expect(intersected).toBe(true);
 				});
 								
 				it(stringifyRect(rect4) + ' and ' + stringifyRect(rect3), function () {
-					intersected = defineIntersection(rect4, rect3);
+					intersected = areIntersected(rect4, rect3);
 					expect(intersected).toBe(true);
 				});
 				
 				it(stringifyRect(rect3) + ' and ' + stringifyRect(rect3), function () {
-					intersected = defineIntersection(rect3, rect3);
+					intersected = areIntersected(rect3, rect3);
 					expect(intersected).toBe(true);
 				});
 				
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect8), function () {
-					intersected = defineIntersection(rect1, rect8);
+					intersected = areIntersected(rect1, rect8);
 					expect(intersected).toBe(true);
 				});
 			});
 			
 			describe('not intersected rectangles', function(){
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect5), function () {
-					intersected = defineIntersection(rect1, rect5);
+					intersected = areIntersected(rect1, rect5);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect2) + ' and ' + stringifyRect(rect7), function () {
-					intersected = defineIntersection(rect2, rect7);
+					intersected = areIntersected(rect2, rect7);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect4) + ' and ' + stringifyRect(rect7), function () {
-					intersected = defineIntersection(rect4, rect7);
+					intersected = areIntersected(rect4, rect7);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect2) + ' and ' + stringifyRect(rect5), function () {
-					intersected = defineIntersection(rect2, rect5);
+					intersected = areIntersected(rect2, rect5);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect4), function () {
-					intersected = defineIntersection(rect1, rect4);
+					intersected = areIntersected(rect1, rect4);
+					expect(intersected).toBe(false);
+				});
+				
+				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect7), function () {
+					intersected = areIntersected(rect1, rect7);
 					expect(intersected).toBe(false);
 				});
 			});
 			
 			describe('adjacent(surrounding) rectangles are not intersected ', function(){
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect6), function () {
-					intersected = defineIntersection(rect1, rect6);
+					intersected = areIntersected(rect1, rect6);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect9), function () {
-					intersected = defineIntersection(rect1, rect9);
+					intersected = areIntersected(rect1, rect9);
 					expect(intersected).toBe(false);
 				});
 				
 				it(stringifyRect(rect1) + ' and ' + stringifyRect(rect10), function () {
-					intersected = defineIntersection(rect1, rect10);
+					intersected = areIntersected(rect1, rect10);
 					expect(intersected).toBe(false);
 				});
 			});
@@ -184,7 +193,8 @@ describe('The function', function () {
 					rect7, 
 					rect8, 
 					rect9, 
-					rect10
+					rect10,
+					rect11
 				];
 				filtered = filterVisible(parent, rectangles)
 				expect(filtered).toEqual([

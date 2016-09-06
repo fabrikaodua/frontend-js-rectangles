@@ -1,18 +1,21 @@
 {
-	"name": "frontent-js-functions",
-	"description": "JavaScript functions task",
-	"author": "Fabrika",
+	"name": "frontent-js-rectangles",
+	"description": "JavaScript rectangles intersection task",
+	"author": "Constantine Genchevsky",
 	"version": "1.0.0",
 	"main": "src/index.js",
 	"dependencies": {
 		
 	},
 	"devDependencies": {
-		"grunt": "latest",
-		"grunt-contrib-watch": "latest",
-		"grunt-contrib-jasmine": "latest"
+		"grunt": "1.0.1",
+		"grunt-contrib-watch": "1.0.0",
+		"grunt-contrib-jasmine": "1.0.3",
+		"grunt-contrib-jshint": "1.0.0"
 	},
 	"scripts": {
-		"test": "grunt test"
+		"test": "grunt test",
+		"live": "grunt live",
+		"code": "grunt code"
 	}
 }
