@@ -1,24 +1,14 @@
 {
+	// Используйте IntelliSense, чтобы узнать о возможных атрибутах отладки Node.js.
+	// Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+	// Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "dev",
 			"type": "node",
 			"request": "launch",
-			"program": "${workspaceRoot}/src/index.js",
-			"stopOnEntry": false,
-			"args": [],
-			"cwd": "${workspaceRoot}/src",
-			"runtimeExecutable": null,
-			"runtimeArgs": [
-				"--nolazy"
-			],
-			"env": {
-				"NODE_ENV": "development"
-			},
-			"externalConsole": false,
-			"sourceMaps": false,
-			"outDir": null
+			"name": "Запустить программу",
+			"program": "${workspaceRoot}\\src\\index.js"
 		}
 	]
 }
