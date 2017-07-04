@@ -1,5 +1,33 @@
 // Place your settings in this file to overwrite default and user settings.
 {
 	"editor.insertSpaces": false,
-	"editor.wordWrap": "bounded"
+	"editor.detectIndentation": false,
+	"editor.wordWrap": "on",
+	"files.autoSave": "onFocusChange",
+	"files.eol": "\n",
+	"jshint.enable": false,
+	"eslint.autoFixOnSave": true,
+	"editor.formatOnSave": true,
+	"javascript.format.enable": true,
+	"javascript.validate.enable": false,
+	"eslint.validate": [
+		{
+			"language": "html",
+			"autoFix": true
+		},
+		{
+			"language": "javascript",
+			"autoFix": true
+		}
+	],
+	"eslint.options": {
+		"extensions": [
+			".html",
+			".js"
+		]
+	},
+	"eslint.workingDirectories": [
+		"./src",
+		"./test"
+	]
 }
